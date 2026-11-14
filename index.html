@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11221c" />
+  <title>CodeCrumbs — Learn Python in snack-sized bites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="CodeCrumbs home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>code<span class="brand-accent">crumbs</span></span>
+      </a>
+      <div class="topbar-center">
+        <span class="soft-dot"></span>
+        <span>Python fundamentals</span>
+      </div>
+      <div class="topbar-actions">
+        <div class="streak-pill">
+          <span class="flame">✦</span>
+          <span><strong id="streakCount">4</strong> day streak</span>
+        </div>
+        <button class="avatar" type="button" aria-label="Open profile">AM</button>
+      </div>
+    </header>
+
+    <main id="top" class="main-grid">
+      <section class="learning-column" aria-labelledby="pageTitle">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT BITE</div>
+        <div class="heading-row">
+          <div>
+            <h1 id="pageTitle">Small bites.<br><em>Big Python brain.</em></h1>
+            <p class="lede">Practice one idea, earn a playful reset,<br class="desktop-break"> then come right back for the next one.</p>
+          </div>
+          <div class="daily-goal">
+            <div class="goal-ring"><span id="goalValue">38%</span></div>
+            <div><span class="goal-label">DAILY GOAL</span><strong><span id="goalDone">3</span> / 8 bites</strong></div>
+          </div>
+        </div>
+
+        <div class="lesson-progress">
+          <div class="lesson-progress-meta"><span>Lesson 02 · Lists & loops</span><span id="progressCopy">Bite 3 of 8</span></div>
+          <div class="progress-track"><div id="lessonProgress" class="progress-fill" style="width: 38%"></div></div>
+        </div>
+
+        <article class="question-card" aria-live="polite">
+          <div class="question-card-top">
+            <div class="tag-row"><span class="tag tag-green">LISTS</span><span class="tag tag-neutral">2 min bite</span></div>
+            <span class="question-number" id="questionNumber">03 <span>/ 08</span></span>
+          </div>
+          <div class="question-content">
+            <p class="question-kicker">QUICK CHECK</p>
+            <h2 id="questionTitle">What does this return?</h2>
+            <div class="code-block">
+              <div class="code-top"><span><i></i><i></i><i></i></span><span>python</span></div>
+              <pre><span class="code-purple">snacks</span> = [<span class="code-orange">"cookie"</span>, <span class="code-orange">"apple"</span>, <span class="code-orange">"muffin"</span>]
+<span class="code-blue">print</span>(<span class="code-yellow">len</span>(snacks))</pre>
+            </div>
+            <div class="answer-list" role="group" aria-label="Choose an answer">
+              <button class="answer-option" type="button" data-answer="2"><span class="answer-key">A</span><span>2</span></button>
+              <button class="answer-option" type="button" data-answer="3"><span class="answer-key">B</span><span>3</span></button>
+              <button class="answer-option" type="button" data-answer="4"><span class="answer-key">C</span><span>4</span></button>
+            </div>
+            <div class="feedback" id="feedback" hidden>
+              <span class="feedback-icon">✓</span>
+              <div><strong>Nice bite!</strong><span><code>len()</code> counts every item in the list.</span></div>
+            </div>
+            <div class="question-footer">
+              <button id="hintButton" class="text-button" type="button"><span class="hint-icon">✦</span> Give me a hint</button>
+              <button id="continueButton" class="primary-button" type="button" disabled>Check answer <span>→</span></button>
+            </div>
+            <p id="hintText" class="hint-text" hidden>Count the items between the brackets — <code>len()</code> tells you how many there are.</p>
+          </div>
+        </article>
+
+        <div class="after-card-note"><span class="sparkle">✦</span> Get it right to unlock a snack break <span class="note-arrow">→</span></div>
+      </section>
+
+      <aside class="side-column" aria-label="Learning dashboard">
+        <section class="break-card locked" id="breakCard">
+          <div class="break-card-glow"></div>
+          <div class="break-header">
+            <span class="mini-label">REWARD LOOP</span>
+            <span class="lock-pill" id="lockPill"><span>⌁</span> Locked</span>
+          </div>
+          <div class="break-icon" id="breakIcon" aria-hidden="true">🍪</div>
+          <h2 id="breakTitle">A snack is waiting</h2>
+          <p id="breakDescription">Answer the bite above to unlock a quick game break.</p>
+          <div class="break-meta"><span><span class="meta-icon">◷</span> 2–5 minutes</span><span><span class="meta-icon">✦</span> Just for fun</span></div>
+          <button id="breakButton" class="break-button" type="button" disabled><span id="breakButtonIcon">▣</span> <span id="breakButtonText">Solve to unlock</span></button>
+        </section>
+
+        <section class="path-card">
+          <div class="path-heading"><div><span class="mini-label">TODAY'S PATH</span><h2>Keep the momentum</h2></div><span class="path-count" id="pathCount">3 / 8</span></div>
+          <div class="path-list">
+            <div class="path-item complete"><span class="path-state">✓</span><div><strong>Variables & values</strong><small>Warm-up complete</small></div><span class="path-time">2m</span></div>
+            <div class="path-item complete"><span class="path-state">✓</span><div><strong>List basics</strong><small>Good foundations</small></div><span class="path-time">3m</span></div>
+            <div class="path-item active"><span class="path-state">3</span><div><strong>Count your snacks</strong><small>You're here</small></div><span class="path-time">2m</span></div>
+            <div class="path-item upcoming"><span class="path-state">4</span><div><strong>Loop the loop</strong><small>Up next</small></div><span class="path-time">3m</span></div>
+          </div>
+          <button class="path-link" type="button" id="viewPathButton">View full learning path <span>↗</span></button>
+        </section>
+
+        <div class="tip-card"><span class="tip-mark">“</span><p>Short practice beats a long cram session. Your brain loves a good loop.</p><span class="tip-credit">— the CodeCrumbs kitchen</span></div>
+      </aside>
+    </main>
+
+    <footer class="footer"><span>made for curious minds</span><span class="footer-center"><span class="footer-dot"></span> your progress saves automatically</span><span>v1.0 · python kitchen</span></footer>
+  </div>
+
+  <div class="modal-backdrop" id="snackModal" hidden>
+    <section class="snack-modal" role="dialog" aria-modal="true" aria-labelledby="snackTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close snack break">×</button>
+      <div class="modal-topline"><span class="eyebrow-line"></span> SNACK BREAK <span class="eyebrow-line"></span></div>
+      <div class="modal-icon" aria-hidden="true">🍪</div>
+      <h2 id="snackTitle">Cookie Catch</h2>
+      <p class="modal-subtitle">Catch as many crumbs as you can before your break is done.</p>
+      <div class="timer-row"><div class="timer-ring"><span id="timerDisplay">2:00</span><small>left</small></div><div class="timer-copy"><span class="mini-label">YOUR RESET</span><strong><span id="snackScore">0</span> crumbs caught</strong><p>Pick a little pause. Come back refreshed.</p></div></div>
+      <div class="duration-picker" role="group" aria-label="Break length">
+        <button type="button" class="duration-option selected" data-minutes="2">2 min</button>
+        <button type="button" class="duration-option" data-minutes="3">3 min</button>
+        <button type="button" class="duration-option" data-minutes="5">5 min</button>
+      </div>
+      <div class="game-arena" id="gameArena" aria-label="Cookie Catch game area"><div class="arena-label">TAP THE TREATS</div><button type="button" class="falling-snack snack-one">🍪</button><button type="button" class="falling-snack snack-two">🍓</button><button type="button" class="falling-snack snack-three">🍩</button><span class="arena-spark spark-a">✦</span><span class="arena-spark spark-b">✧</span></div>
+      <div class="modal-bottom"><span><span class="pulse-dot"></span> The next Python bite is queued up</span><button id="endBreakButton" class="primary-button" type="button">End break early <span>→</span></button></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
