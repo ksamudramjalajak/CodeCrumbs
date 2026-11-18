@@ -3,134 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#11221c" />
-  <title>CodeCrumbs — Learn Python in snack-sized bites</title>
+  <meta name="theme-color" content="#f6f5f0" />
+  <title>Pinnest — Collect what inspires you</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="CodeCrumbs home">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span>code<span class="brand-accent">crumbs</span></span>
-      </a>
-      <div class="topbar-center">
-        <span class="soft-dot"></span>
-        <span>Python fundamentals</span>
-      </div>
-      <div class="topbar-actions">
-        <div class="streak-pill">
-          <span class="flame">✦</span>
-          <span><strong id="streakCount">4</strong> day streak</span>
-        </div>
-        <button class="avatar" type="button" aria-label="Open profile">AM</button>
-      </div>
+      <a class="brand" href="/" aria-label="Pinnest home"><span class="brand-mark"><i></i><i></i><i></i></span><span>pin<span>nest</span></span></a>
+      <div class="search-wrap"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Search ideas, creators, or tags" autocomplete="off" /></div>
+      <nav class="top-actions" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home" type="button">Home</button>
+        <button class="nav-link" data-view="explore" type="button">Explore</button>
+        <button class="create-top" id="openCreate" type="button"><span>＋</span> Create</button>
+        <button class="user-menu" id="userMenu" type="button" aria-label="Open account menu"><span class="user-avatar" id="userAvatar">?</span><span id="userLabel">Sign in</span><span class="chevron">⌄</span></button>
+      </nav>
     </header>
 
-    <main id="top" class="main-grid">
-      <section class="learning-column" aria-labelledby="pageTitle">
-        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT BITE</div>
-        <div class="heading-row">
-          <div>
-            <h1 id="pageTitle">Small bites.<br><em>Big Python brain.</em></h1>
-            <p class="lede">Practice one idea, earn a playful reset,<br class="desktop-break"> then come right back for the next one.</p>
-          </div>
-          <div class="daily-goal">
-            <div class="goal-ring"><span id="goalValue">38%</span></div>
-            <div><span class="goal-label">DAILY GOAL</span><strong><span id="goalDone">3</span> / 8 bites</strong></div>
-          </div>
-        </div>
-
-        <div class="lesson-progress">
-          <div class="lesson-progress-meta"><span>Lesson 02 · Lists & loops</span><span id="progressCopy">Bite 3 of 8</span></div>
-          <div class="progress-track"><div id="lessonProgress" class="progress-fill" style="width: 38%"></div></div>
-        </div>
-
-        <article class="question-card" aria-live="polite">
-          <div class="question-card-top">
-            <div class="tag-row"><span class="tag tag-green">LISTS</span><span class="tag tag-neutral">2 min bite</span></div>
-            <span class="question-number" id="questionNumber">03 <span>/ 08</span></span>
-          </div>
-          <div class="question-content">
-            <p class="question-kicker">QUICK CHECK</p>
-            <h2 id="questionTitle">What does this return?</h2>
-            <div class="code-block">
-              <div class="code-top"><span><i></i><i></i><i></i></span><span>python</span></div>
-              <pre><span class="code-purple">snacks</span> = [<span class="code-orange">"cookie"</span>, <span class="code-orange">"apple"</span>, <span class="code-orange">"muffin"</span>]
-<span class="code-blue">print</span>(<span class="code-yellow">len</span>(snacks))</pre>
-            </div>
-            <div class="answer-list" role="group" aria-label="Choose an answer">
-              <button class="answer-option" type="button" data-answer="2"><span class="answer-key">A</span><span>2</span></button>
-              <button class="answer-option" type="button" data-answer="3"><span class="answer-key">B</span><span>3</span></button>
-              <button class="answer-option" type="button" data-answer="4"><span class="answer-key">C</span><span>4</span></button>
-            </div>
-            <div class="feedback" id="feedback" hidden>
-              <span class="feedback-icon">✓</span>
-              <div><strong>Nice bite!</strong><span><code>len()</code> counts every item in the list.</span></div>
-            </div>
-            <div class="question-footer">
-              <button id="hintButton" class="text-button" type="button"><span class="hint-icon">✦</span> Give me a hint</button>
-              <button id="continueButton" class="primary-button" type="button" disabled>Check answer <span>→</span></button>
-            </div>
-            <p id="hintText" class="hint-text" hidden>Count the items between the brackets — <code>len()</code> tells you how many there are.</p>
-          </div>
-        </article>
-
-        <div class="after-card-note"><span class="sparkle">✦</span> Get it right to unlock a snack break <span class="note-arrow">→</span></div>
+    <main>
+      <section class="hero-row">
+        <div class="hero-copy"><span class="eyebrow"><span></span> YOUR DAILY DISCOVERY</span><h1>Collect the things<br><em>that make you want to make.</em></h1><p>Save the rooms, recipes, references, and small sparks that keep your ideas moving.</p></div>
+        <div class="hero-stats"><div><strong id="pinCount">—</strong><span>fresh pins</span></div><div><strong>12k</strong><span>curious people</span></div><div><strong>∞</strong><span>possibilities</span></div></div>
       </section>
 
-      <aside class="side-column" aria-label="Learning dashboard">
-        <section class="break-card locked" id="breakCard">
-          <div class="break-card-glow"></div>
-          <div class="break-header">
-            <span class="mini-label">REWARD LOOP</span>
-            <span class="lock-pill" id="lockPill"><span>⌁</span> Locked</span>
-          </div>
-          <div class="break-icon" id="breakIcon" aria-hidden="true">🍪</div>
-          <h2 id="breakTitle">A snack is waiting</h2>
-          <p id="breakDescription">Answer the bite above to unlock a quick game break.</p>
-          <div class="break-meta"><span><span class="meta-icon">◷</span> 2–5 minutes</span><span><span class="meta-icon">✦</span> Just for fun</span></div>
-          <button id="breakButton" class="break-button" type="button" disabled><span id="breakButtonIcon">▣</span> <span id="breakButtonText">Solve to unlock</span></button>
-        </section>
+      <section class="feed-toolbar"><div class="feed-tabs"><button class="feed-tab active" data-feed="for-you" type="button">For you</button><button class="feed-tab" data-feed="latest" type="button">Latest</button></div><div class="feed-status"><span class="live-dot"></span><span id="feedStatus">Curated from your interests</span></div></section>
 
-        <section class="path-card">
-          <div class="path-heading"><div><span class="mini-label">TODAY'S PATH</span><h2>Keep the momentum</h2></div><span class="path-count" id="pathCount">3 / 8</span></div>
-          <div class="path-list">
-            <div class="path-item complete"><span class="path-state">✓</span><div><strong>Variables & values</strong><small>Warm-up complete</small></div><span class="path-time">2m</span></div>
-            <div class="path-item complete"><span class="path-state">✓</span><div><strong>List basics</strong><small>Good foundations</small></div><span class="path-time">3m</span></div>
-            <div class="path-item active"><span class="path-state">3</span><div><strong>Count your snacks</strong><small>You're here</small></div><span class="path-time">2m</span></div>
-            <div class="path-item upcoming"><span class="path-state">4</span><div><strong>Loop the loop</strong><small>Up next</small></div><span class="path-time">3m</span></div>
-          </div>
-          <button class="path-link" type="button" id="viewPathButton">View full learning path <span>↗</span></button>
-        </section>
-
-        <div class="tip-card"><span class="tip-mark">“</span><p>Short practice beats a long cram session. Your brain loves a good loop.</p><span class="tip-credit">— the CodeCrumbs kitchen</span></div>
-      </aside>
-    </main>
-
-    <footer class="footer"><span>made for curious minds</span><span class="footer-center"><span class="footer-dot"></span> your progress saves automatically</span><span>v1.0 · python kitchen</span></footer>
-  </div>
-
-  <div class="modal-backdrop" id="snackModal" hidden>
-    <section class="snack-modal" role="dialog" aria-modal="true" aria-labelledby="snackTitle">
-      <button class="modal-close" id="closeModal" type="button" aria-label="Close snack break">×</button>
-      <div class="modal-topline"><span class="eyebrow-line"></span> SNACK BREAK <span class="eyebrow-line"></span></div>
-      <div class="modal-icon" aria-hidden="true">🍪</div>
-      <h2 id="snackTitle">Cookie Catch</h2>
-      <p class="modal-subtitle">Catch as many crumbs as you can before your break is done.</p>
-      <div class="timer-row"><div class="timer-ring"><span id="timerDisplay">2:00</span><small>left</small></div><div class="timer-copy"><span class="mini-label">YOUR RESET</span><strong><span id="snackScore">0</span> crumbs caught</strong><p>Pick a little pause. Come back refreshed.</p></div></div>
-      <div class="duration-picker" role="group" aria-label="Break length">
-        <button type="button" class="duration-option selected" data-minutes="2">2 min</button>
-        <button type="button" class="duration-option" data-minutes="3">3 min</button>
-        <button type="button" class="duration-option" data-minutes="5">5 min</button>
+      <div class="content-grid">
+        <section class="feed-area" aria-label="Inspiration feed"><div class="pin-grid" id="pinGrid" aria-live="polite"></div><div class="empty-state" id="emptyState" hidden><div>✦</div><h2>No pins found</h2><p>Try a different search or add the first idea to this board.</p><button class="button-primary" id="emptyCreate" type="button">Create a pin <span>↗</span></button></div></section>
+        <aside class="discover-sidebar">
+          <section class="side-card profile-card"><div class="side-card-kicker">YOUR CORNER</div><div class="mini-profile"><span class="profile-avatar" id="sideAvatar">?</span><div><strong id="sideName">Sign in to personalize</strong><span id="sideBio">Save ideas into your own little world.</span></div></div><button class="side-action" id="sideAction" type="button">Sign in <span>→</span></button></section>
+          <section class="side-card board-card"><div class="side-card-head"><div><div class="side-card-kicker">TRENDING BOARDS</div><h2>Rabbit holes worth falling into</h2></div><span class="spark">✦</span></div><div class="board-list" id="boardList"><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-line"></div></div><button class="side-link" id="createBoardLink" type="button">Make a new board <span>＋</span></button></section>
+          <section class="side-card build-card"><span class="build-shape shape-one"></span><span class="build-shape shape-two"></span><div class="side-card-kicker">INSIDE THE BUILD</div><h2>Ideas are better when they have somewhere to land.</h2><p>PinNest is a full-stack Pinterest-style space for saving and sharing visual inspiration.</p><div class="stacked-avatars"><span>AL</span><span>KM</span><span>JR</span><span class="more">+2k</span></div></section>
+        </aside>
       </div>
-      <div class="game-arena" id="gameArena" aria-label="Cookie Catch game area"><div class="arena-label">TAP THE TREATS</div><button type="button" class="falling-snack snack-one">🍪</button><button type="button" class="falling-snack snack-two">🍓</button><button type="button" class="falling-snack snack-three">🍩</button><span class="arena-spark spark-a">✦</span><span class="arena-spark spark-b">✧</span></div>
-      <div class="modal-bottom"><span><span class="pulse-dot"></span> The next Python bite is queued up</span><button id="endBreakButton" class="primary-button" type="button">End break early <span>→</span></button></div>
-    </section>
+    </main>
+    <footer class="footer"><span>pinnest / made for the curious</span><span><span class="footer-dot"></span> node · express · mongodb</span><span>build v1.0</span></footer>
   </div>
+
+  <div class="modal-backdrop" id="authModal" hidden><section class="modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><button class="modal-close" data-close="authModal" type="button" aria-label="Close">×</button><div class="modal-illustration">✺</div><span class="modal-kicker">WELCOME TO THE NEST</span><h2 id="authTitle">Keep the good stuff close.</h2><p class="modal-copy">Sign in to like, save, and make your own little corners of the internet.</p><div class="auth-tabs"><button class="auth-tab active" data-auth-mode="login" type="button">Sign in</button><button class="auth-tab" data-auth-mode="register" type="button">Create account</button></div><form id="authForm"><div class="form-field register-only" hidden><label for="authUsername">Username</label><input id="authUsername" name="username" placeholder="your-handle" autocomplete="username" /></div><div class="form-field"><label for="authEmail">Email</label><input id="authEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required /></div><div class="form-field"><label for="authPassword">Password</label><input id="authPassword" name="password" type="password" placeholder="At least 6 characters" autocomplete="current-password" required /></div><p class="form-error" id="authError" role="alert"></p><button class="button-primary full-width" type="submit"><span id="authSubmitLabel">Sign in</span> <span>→</span></button></form><button class="demo-button" id="demoLogin" type="button">Try the demo account <span>demo@pinnest.dev</span></button></section></div>
+
+  <div class="modal-backdrop" id="createModal" hidden><section class="modal create-modal" role="dialog" aria-modal="true" aria-labelledby="createTitle"><button class="modal-close" data-close="createModal" type="button" aria-label="Close">×</button><div class="modal-header"><div><span class="modal-kicker">ADD TO THE NEST</span><h2 id="createTitle">Create a new pin</h2><p>Turn a saved image or a fresh upload into something worth coming back to.</p></div><span class="modal-header-mark">✦</span></div><form id="createForm" class="create-form"><label class="upload-drop" for="imageInput"><input id="imageInput" name="image" type="file" accept="image/*" /><span class="upload-icon">↥</span><strong id="uploadLabel">Drop an image here</strong><small>JPG, PNG, or WEBP · up to 8MB</small><img id="imagePreview" alt="Selected image preview" hidden /></label><div class="create-fields"><div class="form-field"><label for="pinTitle">Title</label><input id="pinTitle" name="title" placeholder="Give your pin a good name" required maxlength="100" /></div><div class="form-field"><label for="pinDescription">Description</label><textarea id="pinDescription" name="description" rows="3" placeholder="What makes this worth saving?"></textarea></div><div class="field-row"><div class="form-field"><label for="pinTags">Tags</label><input id="pinTags" name="tags" placeholder="interiors, ideas" /></div><div class="form-field"><label for="pinLink">Source link <span>(optional)</span></label><input id="pinLink" name="link" type="url" placeholder="https://..." /></div></div></div><p class="form-error" id="createError" role="alert"></p><button class="button-primary full-width" type="submit">Publish pin <span>↗</span></button></form></section></div>
+
+  <div class="modal-backdrop" id="boardModal" hidden><section class="modal board-modal" role="dialog" aria-modal="true" aria-labelledby="boardTitle"><button class="modal-close" data-close="boardModal" type="button" aria-label="Close">×</button><div class="modal-illustration board-illustration">▱</div><span class="modal-kicker">MAKE A LITTLE ROOM</span><h2 id="boardTitle">Create a new board</h2><p class="modal-copy">Give your next rabbit hole a name.</p><form id="boardForm"><div class="form-field"><label for="boardName">Board name</label><input id="boardName" name="title" placeholder="Weekend projects" required maxlength="40" /></div><div class="form-field"><label for="boardDescription">Description <span>(optional)</span></label><textarea id="boardDescription" name="description" rows="3" placeholder="A place for..." maxlength="160"></textarea></div><p class="form-error" id="boardError" role="alert"></p><button class="button-primary full-width" type="submit">Create board <span>→</span></button></form></section></div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>

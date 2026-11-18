@@ -1,0 +1,23 @@
+{
+  "name": "pinnest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Pinterest-inspired full-stack app with authentication, pins, boards, likes, saves, and uploads.",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.18.0",
+    "multer": "^2.0.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}

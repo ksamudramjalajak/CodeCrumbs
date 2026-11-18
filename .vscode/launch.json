@@ -4,7 +4,7 @@
     {
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "Open CodeCrumbs in Chrome",
+      "name": "Open Pinnest in Chrome",
       "url": "http://127.0.0.1:4173",
       "webRoot": "${workspaceFolder}"
     }

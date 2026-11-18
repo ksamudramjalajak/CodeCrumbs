@@ -1,6 +1,7 @@
 {
   "files.exclude": {
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    "uploads/*": true
   },
   "liveServer.settings.port": 4173
 }
